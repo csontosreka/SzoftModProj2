@@ -1,17 +1,29 @@
 # **Rendszerterv**
 
-## ***1. A rendszer célja:***
-Manapság az emberek sokat utaznak munkahelyre, iskolába, vagy akár egy nyaralás helyszínére. Ezek az utak több órásak is lehetnek, és valamivel muszáj elütni az időt. Csapatunk erre a célra alkotta meg a Sudoku asztali alkalmazást, amely a kezdő játékosoktól kezdve a haladókig bárki számára alkalmas.
+## ***1. Telepítési terv:***
+A kész projektből készítünk egy .jar fájlt, melyet .exe fájlra konvertálunk, így a felhasználónak csak ezt kell elindítani,hogy működjön az alkalmazás. A webes felület bármelyik böngészőből elindul.
 
-## ***2. Projekt terv:***
+## ***2. A rendszer célja:***
+Manapság az emberek sokat utaznak munkahelyre, iskolába, vagy akár egy nyaralás helyszínére. Ezek az utak több órásak is lehetnek, és valamivel muszáj elütni az időt. Csapatunk erre a célra alkotta meg a Sudoku asztali alkalmazást, amely a kezdő játékosoktól kezdve a haladókig bárki számára alkalmas. <br>
+Rendszer egyéb céljai:
+- Szórakoztatás
+- Minőségi időtöltés
+- Karbantarthatóság biztosítása
+- Pontos működés
+
+## ***3. Projekt terv:***
 ### ***Projekten dolgozó fejlesztők:***
-- **Mikáczó Dávid:** vezető fejlesztő
+- **Mikáczó Dávid:** fejlesztő
 - **Sipos Edit Adrienn:** fejlesztő
-- **Csontos Réka Hanga:** fejlesztő
+- **Csontos Réka Hanga:** vezető fejlesztő
 
 ### ***Ütemterv:***
-A projekt megvalósításához rendelkezésre álló idő: **8 hét**.
+A projekt megvalósításához rendelkezésre álló idő: **8 hét**. <br>
+A csapat heti szinten sprinteket tart. Az első három hétben a specifikációk megírásával foglalkozunk. Az ezt követő hetekben párhuzamosan történik a webes felület és az asztali alkalmazás fejlesztése. <br> 
+6. héten történő demózásra konzolosan működni kell az alkalmazásnak, a webes felületnek pedig el kell készülnie. <br>
+Ezután a GUI megvalósítása következik. Utolsó héten tesztelés lesz.
 
+### ***Mérföldkövek:***
 - **1.hét:** Rendszerterv megírása
 - **2.hét:** Követelmény specifikáció megírása
 - **3.hét:** Funkcionális specifikáció megírása
@@ -21,7 +33,10 @@ A projekt megvalósításához rendelkezésre álló idő: **8 hét**.
 - **7.hét:** Adatbázis létrehozása
 - **8.hét:** Tesztelés
 
-## ***3. Funkcionális terv:***
+## ***4. Architectuális terv:***
+TODO: ábra
+
+## ***5. Funkcionális terv:***
 ### ***Felhasználó:***
 - A kezdőlapon megadhatja a felhasználónevét
 - Kiválaszthatja hogy kezdő, közepes vagy haladó szinten szeretne játszani
@@ -39,16 +54,32 @@ A projekt megvalósításához rendelkezésre álló idő: **8 hét**.
 - A "Back" gomb megnyomása után visszalép a kezdőlapra
 - Miután a felhasználó helyesen kitöltötte a pályát, egy új ablakban adatbázisból megjeleníti az eddigi legjobb időket a felhasználónevekkel együtt
 
-## ***4. Fizikai környezet:***
+### ***Webes felület:***
+TODO
+
+
+### ***Adatbázis terv:***
+TODO + ábrák
+
+## ***Követelmények:***
+TODO táblázat
+
+## ***6. Fizikai környezet:***
 ### ***Fejlesztői eszközök:***
 - IntelliJ IDEA
 - Github
 - Trello
   
-## ***5. Implementációs terv:***
+## ***7. Implementációs terv:***
 A Sudoku Java nyelven írodik. A fejlesztés IntelliJ IDEA-ban történik, a felhasználói felületet a Java FX segítségével valósítjuk meg.
 
-## ***6. Tesztterv:***
+## ***8. Üzleti folyamatok:***
+TODO + ábra
+
+## ***9. Karbantartási terv:***
+A fejlesztés során figyeltünk arra, hogy a függőségeknél megfelelő verziószámokat használjunk. Verzióváltások esetén csapatunk a lehető leghamarabb kijavítja az ez által okozott problémákat.
+
+## ***10. Tesztterv:***
 ### ***Tesztelés elvei:***
 A szoftver működésében található hibák megtalálása és javítása.
 Szeretenénk, ha számológépünk hibamentesen működne, és pontosan számolna.
