@@ -13,7 +13,7 @@ Rendszer egyéb céljai:
 
 ## ***3. Projekt terv:***
 ### ***Projekten dolgozó fejlesztők:***
-- **Mikáczó Dávid:** fejlesztő
+- **Mikáczó Dávid:** Gigachad főfejlesztő imperátor legfőbb vezér programozó :P
 - **Sipos Edit Adrienn:** fejlesztő
 - **Csontos Réka Hanga:** vezető fejlesztő
 
@@ -55,11 +55,15 @@ TODO: ábra
 - Miután a felhasználó helyesen kitöltötte a pályát, egy új ablakban adatbázisból megjeleníti az eddigi legjobb időket a felhasználónevekkel együtt
 
 ### ***Webes felület:***
-TODO
+- Regisztrációs oldal felhasználóknak
+- Backend adatbázis a felhasználók és az elért pontjaik tárolására
+- Az elért pontokat megjelenítő oldal
+- Az alkalmazás kommunikációhoz szükséges tokent konfiguráló oldal
+- Az elért pontok beküldéséhez szükséges "API" oldal
 
 
 ### ***Adatbázis terv:***
-TODO + ábrák
+- Lásd: sudoku_database_sketch.png
 
 ## ***Követelmények:***
 TODO táblázat

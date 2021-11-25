@@ -22,4 +22,5 @@ public class SudokuApplication extends Application {
         stage.setResizable(false);
         stage.show();
     }
+
 }
