@@ -9,10 +9,14 @@ import java.util.Random;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
+import javafx.event.EventHandler;
+
+import javafx.stage.WindowEvent;
+
 import java.io.IOException;
 
 public class StartPageController extends SudokuApplication{
-    public static int[][] genFields= {
+    public int[][] protectedGenFields= {
             {3, 2, 9, 6, 5, 7, 8, 4, 1},
             {7, 4, 5, 8, 3, 1, 2, 9, 6},
             {6, 1, 8, 2, 4, 9, 3, 7, 5},
@@ -24,28 +28,43 @@ public class StartPageController extends SudokuApplication{
             {9, 6, 1, 5, 8, 4, 7, 3, 2},
     };
 
+    public int[][] genFields= {
+            {3, 2, 9, 6, 5, 7, 8, 4, 1},
+            {7, 4, 5, 8, 3, 1, 2, 9, 6},
+            {6, 1, 8, 2, 4, 9, 3, 7, 5},
+            {1, 9, 3, 4, 6, 8, 5, 2, 7},
+            {2, 7, 6, 1, 9, 5, 4, 8, 3},
+            {8, 5, 4, 3, 7, 2, 6, 1, 9},
+            {4, 3, 2, 7, 1, 6, 9, 5, 8},
+            {5, 8, 7, 9, 2, 3, 1, 6, 4},
+            {9, 6, 1, 5, 8, 4, 7, 3, 2},
+    };
+
+    public static int difficulty = 0;
+
     @FXML
     private void handleEasyButton(ActionEvent event) throws IOException {
         Logger.debug("Starting easy level.");
-        genNewFields(20);
+        difficulty=20;
         startSudoku(event);
     }
 
     @FXML
     private void handleMediumButton(ActionEvent event) throws IOException{
         Logger.debug("Starting medium level.");
-        genNewFields(50);
+        difficulty=40;
         startSudoku(event);
     }
 
     @FXML
     private void handleHardButton(ActionEvent event) throws IOException{
         Logger.debug("Starting hard level.");
-        genNewFields(80);
+        difficulty=60;
         startSudoku(event);
     }
 
-    public void genNewFields(int difficulty){
+    public void genNewFields(){
+        genFields=protectedGenFields;
         Random rand = new Random();
         int numRowSwaps = rand.nextInt(100);
         int numColSwaps = rand.nextInt(100);
@@ -81,6 +100,11 @@ public class StartPageController extends SudokuApplication{
         Parent root = FXMLLoader.load(getClass().getResource("/SudokuBoard.fxml"));
         sudokuStage.setTitle("Sudoku!");
         sudokuStage.setScene(new Scene(root, 600, 400));
+        sudokuStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                SudokuApplication.currstage.show();
+            }
+        });
         sudokuStage.show();
         SudokuApplication.currstage.hide();
     }

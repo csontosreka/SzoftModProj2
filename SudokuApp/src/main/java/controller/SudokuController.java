@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SudokuController extends SudokuApplication implements Initializable {
+public class SudokuController extends StartPageController implements Initializable {
     boolean notSentYet = true;
     long start = 0;
     long finish = 0;
@@ -308,8 +308,8 @@ public class SudokuController extends SudokuApplication implements Initializable
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if(StartPageController.genFields[i][j] == 0) myTextFields[i][j].setText("");
-                else myTextFields[i][j].setText(String.valueOf(StartPageController.genFields[i][j]));
+                if(genFields[i][j] == 0) myTextFields[i][j].setText("");
+                else myTextFields[i][j].setText(String.valueOf(genFields[i][j]));
             }
         }
     }
@@ -355,7 +355,7 @@ public class SudokuController extends SudokuApplication implements Initializable
         if(checkBoard(matrix)){
             finish = System.currentTimeMillis();
             long timeElapsed = finish - start;
-            score = (300000 - timeElapsed);
+            score = (0 - timeElapsed);
             if(notSentYet) {
                 try {
                     sendScore();
@@ -389,6 +389,7 @@ public class SudokuController extends SudokuApplication implements Initializable
     @FXML
     void onActionSolve(ActionEvent event) {
         notSentYet=false;
+        loadDefaultSud();
         TextField[][] myTextFields = {
                 {Index00, Index01, Index02, Index03, Index04, Index05, Index06, Index07, Index08},
                 {Index10, Index11, Index12, Index13, Index14, Index15, Index16, Index17, Index18},
@@ -482,6 +483,7 @@ public class SudokuController extends SudokuApplication implements Initializable
 
     public void initialize(URL url, ResourceBundle resourceBundle){
         start = System.currentTimeMillis();
+        genNewFields();
         loadDefaultSud();
     }
 }
