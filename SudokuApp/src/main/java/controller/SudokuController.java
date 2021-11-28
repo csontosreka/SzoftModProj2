@@ -481,6 +481,8 @@ public class SudokuController extends StartPageController implements Initializab
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle){
+        Logger.debug("Started game with token: " + scoreToken);
+        Logger.debug("Current score: " + score);
         start = System.currentTimeMillis();
         genNewFields();
         loadDefaultSud();

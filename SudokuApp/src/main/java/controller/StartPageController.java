@@ -1,10 +1,13 @@
 package controller;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.net.URL;
 import java.util.Random;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
@@ -14,8 +17,10 @@ import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
+import java.util.Scanner;
 
-public class StartPageController extends SudokuApplication{
+public class StartPageController extends SudokuApplication implements Initializable {
     public int[][] protectedGenFields= {
             {3, 2, 9, 6, 5, 7, 8, 4, 1},
             {7, 4, 5, 8, 3, 1, 2, 9, 6},
@@ -44,29 +49,29 @@ public class StartPageController extends SudokuApplication{
     public static String scoreToken = "notregyet";
 
     @FXML
-    private void handleEasyButton(ActionEvent event) throws IOException {
+    private void handleEasyButton() throws IOException {
         Logger.debug("Starting easy level.");
         difficulty=20;
-        startSudoku(event);
+        startSudoku();
     }
 
     @FXML
-    private void handleMediumButton(ActionEvent event) throws IOException{
+    private void handleMediumButton() throws IOException{
         Logger.debug("Starting medium level.");
         difficulty=40;
-        startSudoku(event);
+        startSudoku();
     }
 
     @FXML
-    private void handleHardButton(ActionEvent event) throws IOException{
+    private void handleHardButton() throws IOException{
         Logger.debug("Starting hard level.");
         difficulty=60;
-        startSudoku(event);
+        startSudoku();
     }
 
     @FXML
-    private void handleTokenButton(ActionEvent event) throws IOException{
-        changeToken(event);
+    private void handleTokenButton() throws IOException{
+        changeToken();
     }
 
     public void genNewFields(){
@@ -101,7 +106,7 @@ public class StartPageController extends SudokuApplication{
         }
     }
 
-    public void changeToken(ActionEvent event) throws IOException{
+    public void changeToken() throws IOException{
         Stage tokenStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/changeToken.fxml"));
         tokenStage.setTitle("Change User Token");
@@ -118,7 +123,7 @@ public class StartPageController extends SudokuApplication{
         SudokuApplication.currstage.hide();
     }
 
-    public void startSudoku(ActionEvent event) throws IOException{
+    public void startSudoku() throws IOException{
         Stage sudokuStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/SudokuBoard.fxml"));
         sudokuStage.setTitle("Sudoku!");
@@ -132,4 +137,27 @@ public class StartPageController extends SudokuApplication{
         sudokuStage.show();
         SudokuApplication.currstage.hide();
     }
+
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        try {
+            File myObj = new File("token.txt");
+            if (myObj.createNewFile()) {
+                FileWriter myWriter = new FileWriter("token.txt");
+                myWriter.write("notregyet");
+                myWriter.close();
+                Logger.debug("File created: " + myObj.getName());
+            } else {
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    scoreToken=data;
+                    Logger.debug("Token read from file: " + data);
+                }
+                myReader.close();
+            }
+        } catch (IOException e) {
+            Logger.debug(e);
+        }
+    }
 }
+
