@@ -405,7 +405,7 @@ public class SudokuController extends StartPageController implements Initializab
             for (int j = 0; j < 9; j++) {
                 int current_val = 0;
                 if (!myTextFields[i][j].getText().isEmpty()) matrix[i][j]  = Integer.valueOf(myTextFields[i][j].getText());
-                matrix[i][j] = current_val;
+                else matrix[i][j] = current_val;
                 Logger.debug(current_val);
             }
         }

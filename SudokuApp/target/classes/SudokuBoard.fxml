@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
 <AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SudokuController">
    <children>
@@ -115,5 +116,9 @@
       <Button layoutX="486.0" layoutY="38.0" mnemonicParsing="false" onAction="#onActionCheckBoard" text="Check Board" />
       <Button layoutX="486.0" layoutY="175.0" mnemonicParsing="false" onAction="#onActionSolve" text="Solve Board" />
       <Button layoutX="500.0" layoutY="300.0" mnemonicParsing="false" onAction="#onActionReset" text="Reset" />
+      <Line endX="85.5" endY="-7.0" layoutX="58.0" layoutY="14.0" startX="85.5" startY="377.0" />
+      <Line endX="-3.0" endY="377.0" layoutX="282.0" layoutY="14.0" startX="-3.0" startY="-8.0" />
+      <Line endX="-13.0" endY="127.0" layoutX="427.0" layoutY="14.0" startX="-420.0" startY="127.0" />
+      <Line endX="-13.0" endY="127.0" layoutX="427.0" layoutY="139.0" startX="-420.0" startY="127.0" />
    </children>
 </AnchorPane>
