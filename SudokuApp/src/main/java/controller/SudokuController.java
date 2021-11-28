@@ -1,5 +1,4 @@
 package controller;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -290,6 +290,10 @@ public class SudokuController extends SudokuApplication implements Initializable
     }
     @FXML
     void onActionReset(ActionEvent event) {
+        loadDefaultSud();
+    }
+
+    void loadDefaultSud() {
         TextField[][] myTextFields = {
                 {Index00, Index01, Index02, Index03, Index04, Index05, Index06, Index07, Index08},
                 {Index10, Index11, Index12, Index13, Index14, Index15, Index16, Index17, Index18},
@@ -304,7 +308,8 @@ public class SudokuController extends SudokuApplication implements Initializable
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                myTextFields[i][j].setText("");
+                if(StartPageController.genFields[i][j] == 0) myTextFields[i][j].setText("");
+                else myTextFields[i][j].setText(String.valueOf(StartPageController.genFields[i][j]));
             }
         }
     }
@@ -348,6 +353,9 @@ public class SudokuController extends SudokuApplication implements Initializable
             }
         }
         if(checkBoard(matrix)){
+            finish = System.currentTimeMillis();
+            long timeElapsed = finish - start;
+            score = (300000 - timeElapsed);
             if(notSentYet) {
                 try {
                     sendScore();
@@ -357,9 +365,6 @@ public class SudokuController extends SudokuApplication implements Initializable
                 }
                 notSentYet = false;
                 Alert error = new Alert(Alert.AlertType.WARNING);
-                finish = System.currentTimeMillis();
-                long timeElapsed = finish - start;
-                score = (300000 - timeElapsed);
                 error.setTitle("Winner");
                 error.setContentText("You Win! Score: " + score);
                 error.showAndWait();
@@ -369,13 +374,13 @@ public class SudokuController extends SudokuApplication implements Initializable
             }
             else {
                 Alert error = new Alert(Alert.AlertType.WARNING);
-                error.setTitle("Score Already Submitted!");
-                error.setContentText("You have already win this game, please start a new one!");
+                error.setTitle("You can't submit your score anymore!");
+                error.setContentText("You have to start a new game to submit one!");
                 error.showAndWait();
             }
         }else {
             Alert error = new Alert(Alert.AlertType.WARNING);
-            error.setTitle("Looser");
+            error.setTitle("Loser");
             error.setContentText("Incorrect!");
             error.showAndWait();
         }
@@ -383,6 +388,7 @@ public class SudokuController extends SudokuApplication implements Initializable
 
     @FXML
     void onActionSolve(ActionEvent event) {
+        notSentYet=false;
         TextField[][] myTextFields = {
                 {Index00, Index01, Index02, Index03, Index04, Index05, Index06, Index07, Index08},
                 {Index10, Index11, Index12, Index13, Index14, Index15, Index16, Index17, Index18},
@@ -398,8 +404,9 @@ public class SudokuController extends SudokuApplication implements Initializable
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 int current_val = 0;
-                if (!myTextFields[i][j].getText().isEmpty()) current_val = Integer.valueOf(myTextFields[i][j].getText());
+                if (!myTextFields[i][j].getText().isEmpty()) matrix[i][j]  = Integer.valueOf(myTextFields[i][j].getText());
                 matrix[i][j] = current_val;
+                Logger.debug(current_val);
             }
         }
         if(SolveSudoku(matrix, 9)){
@@ -475,6 +482,6 @@ public class SudokuController extends SudokuApplication implements Initializable
 
     public void initialize(URL url, ResourceBundle resourceBundle){
         start = System.currentTimeMillis();
+        loadDefaultSud();
     }
-
 }
