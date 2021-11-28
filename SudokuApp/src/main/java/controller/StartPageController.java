@@ -10,7 +10,7 @@ import org.tinylog.Logger;
 
 import java.io.IOException;
 
-public class StartPageController {
+public class StartPageController extends SudokuApplication{
 
     @FXML
     private void handleEasyButton(ActionEvent event) throws IOException {
@@ -29,11 +29,10 @@ public class StartPageController {
     }
 
     public void startSudoku() throws IOException{
-        Stage sudokStage = new Stage();
+        Stage sudokuStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/SudokuBoard.fxml"));
-        sudokStage.setTitle("Sudoku!");
-        sudokStage.setScene(new Scene(root, 300, 275));
-        sudokStage.show();
-
+        sudokuStage.setTitle("Sudoku!");
+        sudokuStage.setScene(new Scene(root, 600, 400));
+        sudokuStage.show();
     }
 }

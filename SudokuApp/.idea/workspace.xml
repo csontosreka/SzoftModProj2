@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dc291c0f-a754-48a4-98eb-2e8da510e19d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/SudokuBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SudokuBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SudokuBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SudokuBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuWeb/submitscore.php" beforeDir="false" afterPath="$PROJECT_DIR$/../SudokuWeb/submitscore.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -112,6 +114,7 @@
       <workItem from="1637864872149" duration="603000" />
       <workItem from="1637865496196" duration="84000" />
       <workItem from="1637865601329" duration="355000" />
+      <workItem from="1638124543567" duration="3942000" />
     </task>
     <servers />
   </component>

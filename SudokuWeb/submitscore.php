@@ -2,10 +2,10 @@
 // Konfig fájl betöltése(kell az adatbázishoz)
 require_once "config.php";
 
-//http://localhost/sudoku/submitscore.php?scoretoken=sziauram&score=998
+//http://localhost/SudokuWeb/submitscore.php?scoretoken=sziauram&score=998
 
-if(isset($_GET['scoretoken']) && isset($_GET['score'])){
-	mysqli_query($link, "INSERT INTO `scoreboard` (`userid`, `score`) SELECT id, " . $_GET["score"] . ' AS score FROM `users` WHERE scoretoken ="' . rawurldecode($_GET["scoretoken"] . '"'));
+if(isset($_POST['scoretoken']) && isset($_POST['score'])){
+	mysqli_query($link, "INSERT INTO `scoreboard` (`userid`, `score`) SELECT id, " . $_POST["score"] . ' AS score FROM `users` WHERE scoretoken ="' . rawurldecode($_POST["scoretoken"] . '"'));
 	exit();
 }
 else{

@@ -5,11 +5,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SudokuController implements Initializable {
+
+    long start = 0;
+    long finish = 0;
+    long score = 0;
 
     @FXML
     private TextField Index18;
@@ -289,6 +305,24 @@ public class SudokuController implements Initializable {
             }
         }
     }
+
+    @FXML
+    void sendScore() throws IOException {
+        HttpPost post = new HttpPost("http://localhost/SudokuWeb/submitscore.php");
+
+        // add request parameter, form parameters
+        List<NameValuePair> urlParameters = new ArrayList<>();
+        urlParameters.add(new BasicNameValuePair("scoretoken", "sziauram"));
+        urlParameters.add(new BasicNameValuePair("score", String.valueOf(score)));
+
+        post.setEntity(new UrlEncodedFormEntity(urlParameters));
+
+        try (CloseableHttpClient httpClient = HttpClients.createDefault();
+             CloseableHttpResponse response = httpClient.execute(post)) {
+            System.out.println(EntityUtils.toString(response.getEntity()));
+        }
+    }
+
     @FXML
     void onActionCheckBoard(ActionEvent event) {
         TextField[][] myTextFields = {
@@ -310,9 +344,18 @@ public class SudokuController implements Initializable {
             }
         }
         if(checkBoard(matrix)){
+            try {
+                sendScore();
+            }
+            catch(IOException e) {
+                System.out.println(e);
+            }
             Alert error = new Alert(Alert.AlertType.WARNING);
+            finish = System.currentTimeMillis();
+            long timeElapsed = finish - start;
+            score = (300000 - timeElapsed);
             error.setTitle("Winner");
-            error.setContentText("You Win!");
+            error.setContentText("You Win! Score: " + score);
             error.showAndWait();
         }else {
             Alert error = new Alert(Alert.AlertType.WARNING);
@@ -414,7 +457,7 @@ public class SudokuController implements Initializable {
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle){
-
+        start = System.currentTimeMillis();
     }
 
 }
