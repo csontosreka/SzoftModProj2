@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/start.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +26,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="20d80qmsqDKnc4Kj1nDDRvULkWv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,6 +44,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -114,7 +120,7 @@
       <workItem from="1637865496196" duration="84000" />
       <workItem from="1637865601329" duration="355000" />
       <workItem from="1638124543567" duration="3942000" />
-      <workItem from="1638128541943" duration="9036000" />
+      <workItem from="1638128541943" duration="12930000" />
     </task>
     <servers />
   </component>

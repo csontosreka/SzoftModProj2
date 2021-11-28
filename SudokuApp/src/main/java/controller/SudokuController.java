@@ -314,20 +314,19 @@ public class SudokuController extends StartPageController implements Initializab
         }
     }
 
-    @FXML
     void sendScore() throws IOException {
         HttpPost post = new HttpPost("http://localhost/SudokuWeb/submitscore.php");
 
         // add request parameter, form parameters
         List<NameValuePair> urlParameters = new ArrayList<>();
-        urlParameters.add(new BasicNameValuePair("scoretoken", "notregyet"));
+        urlParameters.add(new BasicNameValuePair("scoretoken", scoreToken));
         urlParameters.add(new BasicNameValuePair("score", String.valueOf(score)));
 
         post.setEntity(new UrlEncodedFormEntity(urlParameters));
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
              CloseableHttpResponse response = httpClient.execute(post)) {
-            System.out.println(EntityUtils.toString(response.getEntity()));
+            Logger.debug(EntityUtils.toString(response.getEntity()));
         }
     }
 

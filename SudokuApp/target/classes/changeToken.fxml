@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="input" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: blanchedalmond; -fx-border-color: #8b4513;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.tokenController">
+   <children>
+      <Label text="Change User Token" textAlignment="CENTER" textFill="SADDLEBROWN">
+         <font>
+            <Font size="64.0" />
+         </font>
+         <padding>
+            <Insets left="54.0" right="54.0" />
+         </padding>
+      </Label>
+      <Button layoutX="202.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleTokenChange" prefHeight="54.0" prefWidth="258.0" style="-fx-background-color: peru; -fx-font-weight: bold;" text="Save" textAlignment="CENTER" textFill="#5f2c08">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+      <TextArea fx:id="textArea" editable="true" layoutX="162.0" layoutY="135.0" prefHeight="112.0" prefWidth="336.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

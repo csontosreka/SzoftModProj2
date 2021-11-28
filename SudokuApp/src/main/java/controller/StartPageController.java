@@ -41,6 +41,7 @@ public class StartPageController extends SudokuApplication{
     };
 
     public static int difficulty = 0;
+    public static String scoreToken = "notregyet";
 
     @FXML
     private void handleEasyButton(ActionEvent event) throws IOException {
@@ -65,7 +66,7 @@ public class StartPageController extends SudokuApplication{
 
     @FXML
     private void handleTokenButton(ActionEvent event) throws IOException{
-        Logger.debug("Token");
+        changeToken(event);
     }
 
     public void genNewFields(){
@@ -100,11 +101,29 @@ public class StartPageController extends SudokuApplication{
         }
     }
 
+    public void changeToken(ActionEvent event) throws IOException{
+        Stage tokenStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/changeToken.fxml"));
+        tokenStage.setTitle("Change User Token");
+        Scene scene = new Scene(root);
+        tokenStage.setScene(scene);
+        tokenStage.setResizable(false);
+        tokenStage.show();
+        tokenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                SudokuApplication.currstage.show();
+            }
+        });
+        tokenStage.show();
+        SudokuApplication.currstage.hide();
+    }
+
     public void startSudoku(ActionEvent event) throws IOException{
         Stage sudokuStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/SudokuBoard.fxml"));
         sudokuStage.setTitle("Sudoku!");
         sudokuStage.setScene(new Scene(root, 600, 400));
+        sudokuStage.setResizable(false);
         sudokuStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             public void handle(WindowEvent we) {
                 SudokuApplication.currstage.show();
