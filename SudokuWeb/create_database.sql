@@ -13,6 +13,7 @@ CREATE TABLE users (
 
 -- username: admin password(hashed): admin
 INSERT INTO `users` (`id`, `username`, `password`, `scoretoken`, `created_at`) VALUES ('1', 'admin', '$2y$10$1NCHbyIJXXixl1a.Ah/Mwuv9ao5qqsMqirqB9fMA1taArgi35ebI6', 'sziauram', current_timestamp());
+INSERT INTO `users` (`id`, `username`, `password`, `scoretoken`, `created_at`) VALUES ('2', 'Unregistered User', '$2y$10$2zisOxUZa3j.bX79XHATEuLogWoCh/abOnj0i7xO43GUl2i4rpXna', 'notregyet', current_timestamp());
 
 CREATE TABLE scoreboard (
     userid INT NOT NULL,

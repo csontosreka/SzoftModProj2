@@ -63,6 +63,11 @@ public class StartPageController extends SudokuApplication{
         startSudoku(event);
     }
 
+    @FXML
+    private void handleTokenButton(ActionEvent event) throws IOException{
+        Logger.debug("Token");
+    }
+
     public void genNewFields(){
         genFields=protectedGenFields;
         Random rand = new Random();

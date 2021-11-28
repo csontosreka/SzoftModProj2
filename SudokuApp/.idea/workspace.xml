@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/start.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,7 @@
       <workItem from="1637865496196" duration="84000" />
       <workItem from="1637865601329" duration="355000" />
       <workItem from="1638124543567" duration="3942000" />
-      <workItem from="1638128541943" duration="8276000" />
+      <workItem from="1638128541943" duration="9036000" />
     </task>
     <servers />
   </component>

@@ -320,7 +320,7 @@ public class SudokuController extends StartPageController implements Initializab
 
         // add request parameter, form parameters
         List<NameValuePair> urlParameters = new ArrayList<>();
-        urlParameters.add(new BasicNameValuePair("scoretoken", "sziauram"));
+        urlParameters.add(new BasicNameValuePair("scoretoken", "notregyet"));
         urlParameters.add(new BasicNameValuePair("score", String.valueOf(score)));
 
         post.setEntity(new UrlEncodedFormEntity(urlParameters));
@@ -355,7 +355,7 @@ public class SudokuController extends StartPageController implements Initializab
         if(checkBoard(matrix)){
             finish = System.currentTimeMillis();
             long timeElapsed = finish - start;
-            score = (0 - timeElapsed);
+            score = (150000 - timeElapsed);
             if(notSentYet) {
                 try {
                     sendScore();
