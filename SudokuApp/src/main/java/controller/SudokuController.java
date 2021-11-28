@@ -1,10 +1,13 @@
 package controller;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
+import javafx.stage.Stage;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.message.BasicNameValuePair;
@@ -21,8 +24,8 @@ import java.util.ResourceBundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SudokuController implements Initializable {
-
+public class SudokuController extends SudokuApplication implements Initializable {
+    boolean notSentYet = true;
     long start = 0;
     long finish = 0;
     long score = 0;
@@ -301,7 +304,7 @@ public class SudokuController implements Initializable {
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                myTextFields[i][j].setText("0");
+                myTextFields[i][j].setText("");
             }
         }
     }
@@ -339,24 +342,37 @@ public class SudokuController implements Initializable {
         char[][] matrix = new char[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                char current_val = myTextFields[i][j].getText().charAt(0);
+                char current_val = '0';
+                if (!myTextFields[i][j].getText().isEmpty()) current_val = myTextFields[i][j].getText().charAt(0);
                 matrix[i][j] = current_val;
             }
         }
         if(checkBoard(matrix)){
-            try {
-                sendScore();
+            if(notSentYet) {
+                try {
+                    sendScore();
+                }
+                catch(IOException e) {
+                    System.out.println(e);
+                }
+                notSentYet = false;
+                Alert error = new Alert(Alert.AlertType.WARNING);
+                finish = System.currentTimeMillis();
+                long timeElapsed = finish - start;
+                score = (300000 - timeElapsed);
+                error.setTitle("Winner");
+                error.setContentText("You Win! Score: " + score);
+                error.showAndWait();
+                Stage sudokuStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                SudokuApplication.currstage.show();
+                sudokuStage.hide();
             }
-            catch(IOException e) {
-                System.out.println(e);
+            else {
+                Alert error = new Alert(Alert.AlertType.WARNING);
+                error.setTitle("Score Already Submitted!");
+                error.setContentText("You have already win this game, please start a new one!");
+                error.showAndWait();
             }
-            Alert error = new Alert(Alert.AlertType.WARNING);
-            finish = System.currentTimeMillis();
-            long timeElapsed = finish - start;
-            score = (300000 - timeElapsed);
-            error.setTitle("Winner");
-            error.setContentText("You Win! Score: " + score);
-            error.showAndWait();
         }else {
             Alert error = new Alert(Alert.AlertType.WARNING);
             error.setTitle("Looser");
@@ -381,7 +397,8 @@ public class SudokuController implements Initializable {
         int[][] matrix = new int[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                int current_val = Integer.valueOf(myTextFields[i][j].getText());
+                int current_val = 0;
+                if (!myTextFields[i][j].getText().isEmpty()) current_val = Integer.valueOf(myTextFields[i][j].getText());
                 matrix[i][j] = current_val;
             }
         }
