@@ -14,7 +14,7 @@ Ezt egy asztali alkalmazás formájában valósítottuk meg. Az alkalmazásban h
 így kezdőktől a profi játékosokig bárki használhatja. Lehetőség van még regisztrálásra is az alkalmazásunk weboldalán, ezzel a felhasználó hozzáfér több plusz funkcióhoz is, 
 mint például a scoreboard. Regisztrálás után lehetőség van saját token generálására, amit az asztali alkalmazásban aktiválni lehet, így azonosítja a játék az adott felhasználót.
 
-# ***3. Igényelt üzleti folyamatok modellje:***
+## ***3. Igényelt üzleti folyamatok modellje:***
 A webalkalmazáson keresztül lehetőség lenne a felhasználónak "Coin"-okat vásárolni, amelyekkel segítségeket vehetne magának, ezzel is meggyorsítaná a pálya 
 kitöltését, tehát több pontot szerezne. Ez hatalmas segítség lenne, ha épp csúfosan lemaradtunk valamelyik ismerősünktől, és vissza szeretnénk végni.
 Emellett az asztali alkalmazásban lehetne mutatni a játékos energiaszintjét, ami azt korlátozná, hogy a játékos mennyi időt tölthet el egy nap a játékkal.
@@ -31,7 +31,7 @@ Tehát, ha a felhasználó elakad, tudna magának venni olyan pontokat, amelyeke
 - A webes alkalmazás megvalósításához PHP és JavaScript használata
 - Felhasználói felülethez Bootstrap használata
 
-# ***6. Követelmény lista:***
+## ***6. Követelmény lista:***
 | ID | Név | Kifejtés |
 |----|-----|----------|
 | 01 | Adatbázisban tárolás | Adatok tárolása adatbázisban |
@@ -53,7 +53,7 @@ Tehát, ha a felhasználó elakad, tudna magának venni olyan pontokat, amelyeke
 | 17 | Befejezés | A játékot akkor lehessen befejezni, ha az összes mező ki van töltve, valamint helyes a megoldás |
 | 18 | Ellenőrzés | A program pontosan le tudja ellenőrizni a felhasználó megoldását |
 
-# ***7. Forgatókönyvek:***
+## ***7. Forgatókönyvek:***
 - Tokennel történő bejelentkezés
 - Nehézségi szint kiválasztása
 - Pálya kitöltése billentyűzet használatával
@@ -86,5 +86,30 @@ Rendszer fő céljai:
 - Szórakoztatás
 - Minőségi időtöltés
 
+## ***10. Képernyőtervek:***
+### **Kezdetleges terv:**
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/sudoku_gui_plan.png?raw=true)
+### **Kezdőképernyő:**
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/kezdokepernyo.png?raw=true)
+### **Token ablak:**
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/token.png?raw=true)
+### **Sudoku pálya:**
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/sudokupalya.png?raw=true)
+## **Játék befejezésekor kapott üzenet:**
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/jatekvege.png?raw=true)
 
-
+## ***11. Fogalomszótár:***
+- **Sudoku:**  egy logikai játék, melyben megadott szabályok szerint számjegyeket kell elhelyezni egy táblázatban.
+- **ScoreBoard:** egy táblázat, amelyben a felhasználók által elért eredményeket tároljuk.
+- **Token:** a tokent a jelszó mellett vagy helyett használják, elektronikus kulcsként működik, hogy hozzáférjen valamihez.
+- **Energiapontok:** a felhasználó játékkal töltött idejét korlátozó eszköz. 
+- **Java:** a Java általános célú, objektumorientált programozási nyelv.
+- **GUI:** a grafikus felhasználói felület vagy grafikus felhasználói interfész a számítástechnikában olyan, a számítógép és ember közti kapcsolatot megvalósító elemek összessége, melyek a monitor képernyőjén szöveges és rajzos elemek együtteseként jelennek meg.
+- **JavaFX:** a JavaFX egy szoftverplatform asztali alkalmazások, valamint gazdag webes alkalmazások létrehozására és szállítására, amelyek sokféle eszközön futtathatók.
+- **PHP:** egy általános szerveroldali szkriptnyelv dinamikus weblapok készítésére.
+- **JavaScript:** egy objektumorientált programozási nyelv, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak.
+- **Bootstrap:** egy ingyenes és nyílt forráskódú CSS-keretrendszer, amely reszponzív felhasználói felület fejlesztésére irányul.
+- **Coin:** a játékban használt pénznem, amelyet segítségre, vagy energiapont vásárlására költhet a felhasználó
+- **Adatbázis:** az adatbázisok célja adatok megbízható, hosszú távon tartós tárolása és viszonylag gyors visszakereshetőségének biztosítása.
+- **Reszponzív webdesign:** reszponzív elv alapján tervezett oldal tökéletesen igazodik a megjelenítő eszközhöz, mindezt rugalmas felépítéssel, flexibilis képekkel.
+- **Platformfüggetlenség:** olyan számítógépes programokra, operációs rendszerekre, programozási nyelvekre vagy más számítógépes szoftverekre és implementációikra vonatkozik, amelyek több számítógépes platformon képesek működni.
