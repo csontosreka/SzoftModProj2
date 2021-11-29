@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\ikfelev3\szoftmod\SzoftModProj2\SudokuApp\out\artifacts\SudokuApp_jar\SudokuApp.jar</jar>
-  <outfile>C:\Users\david\Desktop\SudokuApp.exe</outfile>
+  <outfile>C:\ikfelev3\szoftmod\SzoftModProj2\SudokuApp\exeWrap\SudokuApp.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -18,7 +18,7 @@
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>15</minVersion>
+    <minVersion>1</minVersion>
     <maxVersion></maxVersion>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
