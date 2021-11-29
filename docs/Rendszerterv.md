@@ -98,7 +98,7 @@ Adatbázisnak MySQL-t használunk.
     - **score** (max 50 karakter, nem null)
     - **created_at** (dátum, timestamp)
 
-![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/sudoku_database_sketch.png?raw=true)
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/sudoku_database_sketch.png?raw=true)
 
 ## ***Követelmények:***
 | ID | Név | Kifejtés |
@@ -126,7 +126,7 @@ Adatbázisnak MySQL-t használunk.
 A Sudoku Java nyelven írodik. A fejlesztés IntelliJ IDEA-ban történik, a felhasználói felületet a Java FX segítségével valósítjuk meg.
 
 ## ***8. Üzleti folyamatok:***
-![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/flowchart.drawio.png?raw=true)
+![alt text](https://github.com/csontosreka/SzoftModProj2/blob/master/images/flowchart.drawio.png?raw=true)
 Ahogy azt az ábrán is látszik, a felhasználó elérheti az asztali és a webes alkalmazásunkat is. Az asztali alkalmazás kezdőoldalán a felhasználó bejelentkezhet és választhat a három nehézségi szint közül. Szintnek megfelelően generálunk pályát. Itt kitöltés közben bármikor újrakezdhető a pálya, és vissza is lehet lépni a kezdőoldalra. Ha a felhasználó kész a kitöltéssel, akkor leellenőrízzük a megoldását, ami ha nem helyes, akkor egy üzenettel visszaküldjük a pályaválasztáshoz, ha helyes, akkor megnézzük, hogy be van-e jelentkezve. Ha be van jelentkezve, akkor elmentjük az eredményét az adatbázisba, valamint neki is kiírjuk a képernyőre. Ha nincs bejelentkezve, akkor ezt felajánljuk neki. Innen visszaláphet a kezdőoldalra. Bejelentkezéskor átirányítjuk a weboldalra. Itt regisztrálni is tud, ha még nincs fiókja. Itt tud magának tokent generálni, szabályokat olvasni, valamint megnézheti a scoreboardot. A weboldal kommunikál majd az adatbázis User és Scoreboard táblájával.
 
 ## ***9. Karbantartási terv:***
