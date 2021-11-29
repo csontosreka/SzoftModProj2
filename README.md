@@ -4,4 +4,4 @@
 - Sipos Edit Adrienn
 - Mikáczó Dávid
 
-[Letöltés](https://github.com/csontosreka/SzoftModProj2/blob/master/SudokuApp/exeWrap/SudokuApp.exe)
+[Letöltés](https://github.com/csontosreka/SzoftModProj2/raw/master/SudokuApp/exeWrap/SudokuApp.exe)
