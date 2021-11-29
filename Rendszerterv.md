@@ -19,7 +19,7 @@ Rendszer egyéb céljai:
 
 ## ***3. Projekt terv:***
 ### ***Projekten dolgozó fejlesztők:***
-- **Mikáczó Dávid:** Gigachad főfejlesztő imperátor legfőbb vezér programozó :P
+- **Mikáczó Dávid:** fejlesztő
 - **Sipos Edit Adrienn:** fejlesztő
 - **Csontos Réka Hanga:** vezető fejlesztő
 
