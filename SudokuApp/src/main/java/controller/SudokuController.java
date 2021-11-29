@@ -354,7 +354,7 @@ public class SudokuController extends StartPageController implements Initializab
         if(checkBoard(matrix)){
             finish = System.currentTimeMillis();
             long timeElapsed = finish - start;
-            score = (150000 - timeElapsed);
+            score = (difficulty*3000 - timeElapsed);
             if(notSentYet) {
                 try {
                     sendScore();
