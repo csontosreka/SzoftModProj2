@@ -7,9 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
-import java.awt.*;
 import java.io.IOException;
-import java.util.Objects;
 
 public class SudokuApplication extends Application {
     public static Stage currstage;

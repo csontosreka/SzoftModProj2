@@ -289,7 +289,7 @@ public class SudokuController extends StartPageController implements Initializab
         return true;
     }
     @FXML
-    void onActionReset(ActionEvent event) {
+    void onActionReset() {
         loadDefaultSud();
     }
 
@@ -360,7 +360,7 @@ public class SudokuController extends StartPageController implements Initializab
                     sendScore();
                 }
                 catch(IOException e) {
-                    System.out.println(e);
+                    Logger.debug(e);
                 }
                 notSentYet = false;
                 Alert error = new Alert(Alert.AlertType.WARNING);
@@ -386,7 +386,7 @@ public class SudokuController extends StartPageController implements Initializab
     }
 
     @FXML
-    void onActionSolve(ActionEvent event) {
+    void onActionSolve() {
         notSentYet=false;
         loadDefaultSud();
         TextField[][] myTextFields = {
@@ -404,7 +404,7 @@ public class SudokuController extends StartPageController implements Initializab
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 int current_val = 0;
-                if (!myTextFields[i][j].getText().isEmpty()) matrix[i][j]  = Integer.valueOf(myTextFields[i][j].getText());
+                if (!myTextFields[i][j].getText().isEmpty()) matrix[i][j]  = Integer.parseInt(myTextFields[i][j].getText());
                 else matrix[i][j] = current_val;
                 Logger.debug(current_val);
             }
@@ -422,7 +422,7 @@ public class SudokuController extends StartPageController implements Initializab
     public static boolean SolveSudoku(int[][] matrix, int n) {
         int rowIndex = -1;
         int columnIndex = -1;
-        int i = 0;
+        int i;
         int j = 0;
 
         for (i = 0; i < n; i++) {
@@ -441,7 +441,7 @@ public class SudokuController extends StartPageController implements Initializab
             return true;
         } else {
             for (int value = 1; value < 10; value++) {
-                if (IsSafe(matrix, value, rowIndex, columnIndex, n)) {
+                if (IsSafe(matrix, value, rowIndex, columnIndex)) {
                     matrix[rowIndex][columnIndex] = value;
                     if (!SolveSudoku(matrix, n)) {
                         matrix[rowIndex][columnIndex] = 0;
@@ -454,19 +454,14 @@ public class SudokuController extends StartPageController implements Initializab
         }
     }
 
-    public static boolean IsSafe(int[][] matrix, int value, int rowIndex, int columnIndex, int n) {
-        //row check
+    public static boolean IsSafe(int[][] matrix, int value, int rowIndex, int columnIndex) {
+        //row and column check
         for (int j = 0; j < 9; j++) {
-            if (matrix[rowIndex][j] == value) {
+            if (matrix[rowIndex][j] == value || matrix[j][columnIndex] == value) {
                 return false;
             }
         }
-        //column check
-        for (int i = 0; i < 9; i++) {
-            if (matrix[i][columnIndex] == value) {
-                return false;
-            }
-        }
+
         //submatrix check
         int baseRowIndex = rowIndex - (rowIndex % 3);
         int baseColumnIndex = columnIndex - (columnIndex % 3);

@@ -7,7 +7,10 @@
     <list default="true" id="dc291c0f-a754-48a4-98eb-2e8da510e19d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StartPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SudokuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SudokuSolution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/tokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/tokenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +127,7 @@
       <workItem from="1638142420921" duration="344000" />
       <workItem from="1638142908021" duration="19000" />
       <workItem from="1638142983287" duration="557000" />
+      <workItem from="1638143625535" duration="1001000" />
     </task>
     <servers />
   </component>

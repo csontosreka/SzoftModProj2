@@ -1,22 +1,18 @@
 package controller;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.net.URL;
-import java.util.Random;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
-import javafx.event.EventHandler;
-
-import javafx.stage.WindowEvent;
-
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -114,11 +110,7 @@ public class StartPageController extends SudokuApplication implements Initializa
         tokenStage.setScene(scene);
         tokenStage.setResizable(false);
         tokenStage.show();
-        tokenStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            public void handle(WindowEvent we) {
-                SudokuApplication.currstage.show();
-            }
-        });
+        tokenStage.setOnCloseRequest(we -> SudokuApplication.currstage.show());
         tokenStage.show();
         SudokuApplication.currstage.hide();
     }
@@ -129,11 +121,7 @@ public class StartPageController extends SudokuApplication implements Initializa
         sudokuStage.setTitle("Sudoku!");
         sudokuStage.setScene(new Scene(root, 600, 400));
         sudokuStage.setResizable(false);
-        sudokuStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            public void handle(WindowEvent we) {
-                SudokuApplication.currstage.show();
-            }
-        });
+        sudokuStage.setOnCloseRequest(we -> SudokuApplication.currstage.show());
         sudokuStage.show();
         SudokuApplication.currstage.hide();
     }

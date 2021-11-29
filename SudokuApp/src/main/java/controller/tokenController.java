@@ -1,26 +1,24 @@
 package controller;
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.Initializable;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Scanner; // Import the Scanner class to read text files
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
-import java.io.IOException;
+
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class tokenController extends StartPageController implements Initializable{
 
     @FXML
-    private void handleTokenChange(ActionEvent event) throws IOException {
+    private void handleTokenChange(ActionEvent event) {
         saveTokenToFile();
         SudokuApplication.currstage.show();
         Stage tokenStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -33,7 +31,7 @@ public class tokenController extends StartPageController implements Initializabl
     private void saveTokenToFile() {
         scoreToken=textArea.getText();
         try {
-            File myObj = new File("token.txt");
+            new File("token.txt");
         FileWriter myWriter = new FileWriter("token.txt");
         myWriter.write(scoreToken);
         myWriter.close();}
