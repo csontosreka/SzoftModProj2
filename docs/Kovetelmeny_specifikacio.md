@@ -25,12 +25,12 @@ Szeretnénk, ha alkalmazásunkat kiegészíthetnénk minél több plusz funkció
 - A "Restart" gomb megnyomásával az összes eddig kitöltött mező tartalma törlésre kerül
 - A "Back" gomb megnyomásával a felhasználó visszaléphet a kezdőoldalra
 
-# ***5. Igényelt üzleti folyamatok modellje:***
+## ***5. Igényelt üzleti folyamatok modellje:***
 - Energiaszint mutatásának implementálása
 - "Coin"-ok bevezetése, amelyekkel segítséget vehet a felhasználó
 - Ezekhez szükséges elemek létrehozása a webalkalmazásban
 
-# ***6. Követelmény lista:***
+## ***6. Követelmény lista:***
 | ID | Név | Kifejtés |
 |----|-----|----------|
 | 01 | Adatbázisban tárolás | Adatok tárolása adatbázisban |
@@ -52,7 +52,7 @@ Szeretnénk, ha alkalmazásunkat kiegészíthetnénk minél több plusz funkció
 | 17 | Befejezés | A játékot akkor lehessen befejezni, ha az összes mező ki van töltve, valamint helyes a megoldás |
 | 18 | Ellenőrzés | A program pontosan le tudja ellenőrizni a felhasználó megoldását |
 
-# ***7. Fogalomszótár:***
+## ***7. Fogalomszótár:***
 - **Sudoku:**  egy logikai játék, melyben megadott szabályok szerint számjegyeket kell elhelyezni egy táblázatban.
 - **ScoreBoard:** egy táblázat, amelyben a felhasználók által elért eredményeket tároljuk.
 - **Token:** a tokent a jelszó mellett vagy helyett használják, elektronikus kulcsként működik, hogy hozzáférjen valamihez.
